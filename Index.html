@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>JobLife AI — Your AI Career Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6fb;--card:#fff;--tx:#0f172a;--mu:#64748b;--bd:#e4e7f0;--p:#4f46e5;--p2:#7c3aed;--pl:#eceeff;--ok:#059669;--wn:#d97706;--er:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b1020;--card:#151b30;--tx:#eef1f8;--mu:#9aa5bd;--bd:#262e48;--pl:#1f2655;--p:#8087ff}}
+:root[data-theme=dark]{--bg:#0b1020;--card:#151b30;--tx:#eef1f8;--mu:#9aa5bd;--bd:#262e48;--pl:#1f2655;--p:#8087ff}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--tx);line-height:1.5;overflow-x:hidden}
+button,input,textarea{font:inherit}button{cursor:pointer;border:0;color:inherit;background:none}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em}h1{font-size:clamp(30px,8vw,54px)}h2{font-size:clamp(24px,5vw,32px)}h3{font-size:15px;margin-bottom:6px}
+.w{max-width:1040px;margin:0 auto;padding:0 18px}.mu{color:var(--mu)}.c{text-align:center}.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--bd)}
+.hd{display:flex;align-items:center;gap:10px;height:58px}.lg{display:flex;align-items:center;gap:8px;font-weight:800;letter-spacing:.04em;cursor:pointer;margin-right:auto}
+.lm{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;display:grid;place-items:center;font-size:13px;letter-spacing:0}
+.lg small{font-size:10px;background:var(--pl);color:var(--p);padding:2px 6px;border-radius:99px}
+.nv{display:flex;gap:2px}.nv a,.nv button{padding:8px 11px;border-radius:10px;color:var(--mu);font-weight:600;font-size:14px;text-decoration:none}.nv .on{background:var(--pl);color:var(--p)}
+.btn{padding:12px 20px;border-radius:14px;font-weight:700;background:var(--p);color:#fff;min-height:48px;transition:.15s;box-shadow:0 6px 16px -8px var(--p)}.btn:active{transform:scale(.96)}.btn.g{background:var(--card);color:var(--tx);border:1px solid var(--bd);box-shadow:none}.btn.s{min-height:38px;padding:7px 14px;font-size:14px}
+.pill{display:block;margin-top:14px;background:var(--pl);color:var(--p);box-shadow:none}
+.cd{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:18px;box-shadow:0 10px 26px -18px rgba(15,23,42,.35);transition:transform .2s}.cd:hover{transform:translateY(-2px)}
+.gr{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+.v{animation:in .35s ease both;padding:22px 18px 100px}section{margin-top:44px}section h2{margin-bottom:14px}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+.hero{display:grid;gap:30px;grid-template-columns:repeat(auto-fit,minmax(min(100%,330px),1fr));align-items:center;padding-top:20px;margin:0}.lead{font-size:17px;margin:14px 0 20px}
+.ic{font-size:24px;width:46px;height:46px;border-radius:14px;background:var(--pl);display:grid;place-items:center;margin-bottom:10px}
+.tg{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px;background:var(--pl);color:var(--p);margin:2px 4px 2px 0;cursor:default}
+.ring{--v:0;width:132px;height:132px;border-radius:50%;background:conic-gradient(var(--p) calc(var(--v)*1%),var(--pl) 0);display:grid;place-items:center;position:relative;margin-bottom:10px}.ring:before{content:"";position:absolute;inset:11px;background:var(--card);border-radius:50%}.ring b{position:relative;font-size:34px}
+.bar{height:8px;border-radius:9px;background:var(--pl);overflow:hidden}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--p),var(--p2));transition:width 1s ease}
+.li{display:flex;gap:10px;padding:4px 0}.ok{color:var(--ok)}.wn{color:var(--wn)}.er{color:var(--er)}.pc{color:var(--p)}
+.sb{display:flex;justify-content:space-between;margin-bottom:8px}.fg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hl{background:linear-gradient(135deg,var(--p),var(--p2));color:#fff;border:0;margin-top:14px}
+.dz{border:2px dashed var(--p);border-radius:20px;padding:30px 16px;text-align:center;background:var(--pl)}.dz .ic{margin:0 auto 10px;background:var(--card)}
+textarea{width:100%;min-height:200px;margin:14px 0;padding:14px;border-radius:16px;border:1px solid var(--bd);background:var(--card);color:var(--tx);resize:vertical}
+.b{max-width:88%;padding:11px 14px;border-radius:18px;margin:8px 0;white-space:pre-wrap}#m .b:last-child{animation:in .25s both}
+.b.a{background:var(--card);border:1px solid var(--bd);border-bottom-left-radius:6px}.b.u{background:var(--p);color:#fff;margin-left:auto;border-bottom-right-radius:6px}
+.dots i{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:var(--mu);animation:bl 1s infinite}.dots i:nth-child(2){animation-delay:.15s}.dots i:nth-child(3){animation-delay:.3s}@keyframes bl{50%{opacity:.25;transform:translateY(-3px)}}
+.chip{padding:9px 14px;border-radius:99px;border:1px solid var(--p);color:var(--p);background:var(--card);font-weight:600;font-size:14px;margin:4px 6px 4px 0}
+.inp{position:sticky;bottom:0;display:flex;gap:8px;padding:10px 0;background:var(--bg)}.inp input{flex:1;min-width:0;padding:13px;border-radius:14px;border:1px solid var(--bd);background:var(--card);color:var(--tx)}
+.sp{width:44px;height:44px;border-radius:50%;border:4px solid var(--pl);border-top-color:var(--p);animation:rt 1s linear infinite;margin:auto}@keyframes rt{to{transform:rotate(360deg)}}
+.bn{display:none;position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--bd);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:9}.bn button{flex:1;font-size:11px;display:grid;justify-items:center;color:var(--mu);padding:5px 0;border-radius:12px}.bn .on{color:var(--p);font-weight:700}.bn span{font-size:20px}
+@media(max-width:800px){.bn{display:flex}.dn{display:none!important}.inp.nb{bottom:calc(64px + env(safe-area-inset-bottom,0px))}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body><div id="app"></div><script>
+const $=s=>document.querySelector(s),A=$('#app');
+const S={v:'land',p:'rahul',ob:0,res:0,job:0,jd:'',err:0,msg:''};
+const P={
+rahul:{n:'Rahul',edu:'12th Pass',exp:'Fresher',en:'Good',city:'Patna',sal:'₹18,000+',fld:'customer support',
+paths:[['Customer Support','Good fit if you communicate confidently in English.'],['Inside Sales','Good if you enjoy talking to people and working toward targets.'],['BPO / International Process','English communication can be valuable here.'],['E-commerce Operations','Useful if you are organised and comfortable with basic computer work.'],['Hospitality / Front Office','A good option if you enjoy interacting with people.']],
+rs:['Rahul Kumar · Patna, Bihar','Education: 12th Pass','Experience: 2 years Customer Support','Skills: English communication, Customer handling, CRM, MS Excel'],sc:72,
+str:['Good communication experience','Customer-facing experience','CRM exposure','Clear work history'],imp:['Professional summary is generic','Achievements need measurable results','Skills section can be more targeted'],
+act:['Rewrite your professional summary','Add numbers to your achievements','Highlight CRM experience','Tailor your resume for each target role'],
+jt:'Customer Support Executive',jd:'Location: Gurugram\nExperience: 0–2 years\n\nRequirements:\n• Good English communication\n• Customer handling\n• Basic computer skills\n• CRM knowledge\n• Flexible shifts',
+mt:78,sg:['English communication','Customer support experience','CRM knowledge','Fresher/entry-level eligibility'],pt:['Flexible shift experience','Advanced CRM tools'],ms:['Specific CRM platform knowledge'],
+why:'Most core requirements match your profile. Your main gap is specific CRM platform experience, which may be learnable.',
+cs:'Your communication and customer-support experience align well with the role. The main gap is the specific CRM platform.',
+sk:'Typing speed, basic CRM tools (like Freshdesk or Zoho) and spoken English practice will add the most value for support roles.',
+bf:['Highlight your customer-handling experience','Mention measurable results','Add relevant CRM tools if you genuinely know them'],
+q:['Tell me about yourself','Why should we hire you?','How do you handle an angry customer?','What are your strengths?','Why do you want this job?']},
+priya:{n:'Priya',edu:'B.Com',exp:'1 year',en:'Good',city:'Delhi',sal:'₹25,000+',fld:'finance operations',
+paths:[['Finance Operations','Fits your B.Com and 1 year of hands-on work.'],['Accounts Executive','Good if you enjoy accuracy and reconciliations.'],['Accounts Payable / Receivable','Builds strong process skills.'],['MIS & Reporting','Useful if you like Excel and data.'],['Banking Operations','A steady path for commerce graduates.']],
+rs:['Priya Sharma · Delhi','Education: B.Com','Experience: 1 year, Accounts Assistant','Skills: Tally, MS Excel, Invoice processing'],sc:68,
+str:['Relevant B.Com background','Hands-on Tally and Excel','Clear communication'],imp:['Summary is generic','Add numbers (invoices, accuracy)','Group skills by tool'],
+act:['Rewrite your summary','Quantify your work','Highlight Tally and Excel','Tailor for each role'],
+jt:'Finance Operations Associate',jd:'Location: Noida\nExperience: 0–2 years\n\nRequirements:\n• B.Com or similar\n• Invoice processing\n• Excel (VLOOKUP)\n• Good communication',
+mt:74,sg:['B.Com background','Invoice and Tally experience','Communication','Experience range'],pt:['Advanced Excel (VLOOKUP, pivots)'],ms:['ERP tools like SAP'],
+why:'Your education and experience fit the core of the role. The gaps, advanced Excel and ERP exposure, are learnable.',
+cs:'Your B.Com background and invoice experience align well. The main gap is ERP exposure.',
+sk:'Advanced Excel (VLOOKUP, pivot tables), basic SAP or Zoho Books, and GST basics would add the most value.',
+bf:['Highlight your accounts and invoicing work','Add numbers: invoices handled, accuracy','List tools only if you really know them'],
+q:['Tell me about yourself','Why should we hire you?','How do you stay accurate under deadlines?','What are your strengths?','Why finance operations?']},
+arjun:{n:'Arjun',edu:'B.Tech',exp:'2 years',en:'Fluent',city:'Bengaluru',sal:'₹10 LPA+',fld:'software development',
+paths:[['Frontend Developer','Your React and JavaScript work is a direct fit.'],['Full-Stack Developer','Natural next step if you add Node and databases.'],['React Engineer','Strong fit for product teams.'],['Product Engineering','Good if you like owning features end to end.'],['QA Automation','A solid adjacent option.']],
+rs:['Arjun Mehta · Bengaluru','Education: B.Tech','Experience: 2 years, Frontend Developer','Skills: JavaScript, React, Git, REST APIs'],sc:76,
+str:['Strong React and JS stack','Real project experience','Relevant degree'],imp:['Add impact metrics (load time, users)','Link GitHub or projects','Trim generic skills'],
+act:['Quantify your impact','Add project links','Highlight React depth','Tailor for each role'],
+jt:'Frontend Developer (React)',jd:'Location: Bengaluru\nExperience: 1–3 years\n\nRequirements:\n• React and JavaScript\n• REST API integration\n• Git\n• TypeScript is a plus',
+mt:82,sg:['React and JavaScript','REST API experience','Git workflow','Experience range'],pt:['Testing (Jest)'],ms:['TypeScript'],
+why:'Your core stack matches closely. TypeScript is the main gap and is quick to pick up.',
+cs:'Your React and JavaScript experience match well. The main gap is TypeScript.',
+sk:'TypeScript, testing with Jest, and basic system design would add the most value.',
+bf:['Highlight your best React project','Add impact numbers','Mention TypeScript only if you really use it'],
+q:['Tell me about yourself','Why should we hire you?','How would you debug a slow React page?','What are your strengths?','Why this role?']}};
+const cp=()=>P[S.p],comp=()=>40+(S.ob?30:0)+(S.res?20:0)+(S.job?10:0);
+const NAV=[['home','Dashboard','🏠','Home'],['career','Career','🧭','Career'],['resume','Resume','📄'],['jobs','Jobs','💼','Jobs'],['coach','AI Coach','✨','AI'],['me','Profile','👤','Profile']];
+const AM={rscore:'resume',match:'jobs',prep:'jobs',mock:'jobs'},NO=['land','start','chat','load','prof'];
+const C={ob:{m:[],ch:[],t:0,s:0},co:{m:[],ch:[],t:0},mk:{m:[],ch:[],t:0,i:0}};
+const cid=()=>({chat:'ob',coach:'co',mock:'mk'})[S.v];
+const QA=['Find my best career paths','Improve my resume','Why am I not getting interviews?','Prepare for interview','What skills should I learn?'];
+const SAMPLE="I'm a 12th pass student, my English is good, I'm a fresher and I want to know what jobs I can get in India.";
+const SA="I have good communication skills, I learn quickly and I take ownership of my work. I enjoy helping people solve problems.";
+const PREF={'Higher salary':'Then Inside Sales and International BPO are worth a close look. They often include incentives on top of base pay, though it varies by company.','Work from home':'Some customer support and chat roles are remote, but many entry-level roles start in-office. I would shortlist Customer Support (chat) and E-commerce Operations.','Career growth':'Customer Support and Inside Sales are good starting points. They build communication skills that can lead to team lead and account roles.','Day shift':'Hospitality / Front Office and E-commerce Operations tend to have more regular hours. Many BPO roles involve shifts, so check each role.','Any job quickly':'Customer Support and BPO roles tend to have frequent entry-level hiring, so they are good places to start applying.'};
+const li=(a,c,s)=>a.map((x,i)=>`<div class=li><b class="${c}">${s||i+1+'.'}</b><span>${x}</span></div>`).join('');
+const F=p=>[['Education',p.edu],['Experience',p.exp],['English',p.en],['Location',p.city],['Target salary',p.sal]].map(x=>`<div><small class=mu>${x[0]}</small><br><b>${x[1]}</b></div>`).join('');
+const chat=(id,ph,nb)=>`<div id=m></div><div id=c></div><form class="inp${nb?' nb':''}" onsubmit="return sub(event,'${id}')"><input name=q placeholder="${ph}" autocomplete=off><button class=btn>Send</button></form>`;
+const cards=a=>`<div class=gr>${a.map(x=>`<div class=cd><div class=ic>${x[0]}</div><h3>${x[1]}</h3><p class=mu>${x[2]}</p></div>`).join('')}</div>`;
+
+function go(v){S.v=v;S.err=0;if(v=='coach'&&!C.co.m.length)initCo();render();scrollTo(0,0)}
+function ld(v,m){S.v='load';S.msg=m;render();setTimeout(()=>go(v),1100)}
+function initCo(){const p=cp();C.co.m=[{r:'u',t:'Should I apply for this job?'},{r:'a',t:`Based on your profile and the ${p.jt} description, it looks relevant. ${p.cs}`}];C.co.ch=QA}
+function startOb(){const c=C.ob;c.m=[{r:'a',t:`Hi! I'm JobLife 👋\n\nYou don't need a resume to get started.\n\nTell me about yourself in your own words.\n\nFor example: "I'm a 12th pass student. My English is good. I'm looking for a job in India and I want to earn at least ₹18,000 per month."`}];c.ch=['Use sample message'];c.s=0;c.t=0;c.g={};c.ask='';S.p='rahul';go('chat')}
+function startMk(){const c=C.mk,p=cp();c.i=0;c.t=0;c.ch=['Use sample answer'];c.m=[{r:'a',t:`Welcome, ${p.n}. Let's begin.\n\nTell me about yourself.`}];go('mock')}
+function upd(id){if(cid()!=id)return;const c=C[id];$('#m').innerHTML=c.m.map(m=>`<div class="b ${m.r}">${m.t.replace(/</g,'&lt;')}</div>`).join('')+(c.t?'<div class="b a"><span class=dots><i></i><i></i><i></i></span></div>':'');$('#c').innerHTML=c.ch.map(x=>`<button class=chip onclick="pick('${id}',this.textContent)">${x}</button>`).join('');scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'})}
+let SM=null;if(window.claude)claude.use('sample').then(x=>SM=x).catch(()=>{});
+const llm=(id,t,note,w=80)=>{if(!SM)return null;const p=cp(),h=C[id].m.slice(-9,-1).map(m=>(m.r=='u'?'User: ':'JobLife: ')+m.t).join('\n');return SM(`You are JobLife, a warm AI career coach for Indian job seekers aged 18-35. ${note} Reply in the same language the user writes (English, Hindi or Hinglish). Be specific to what they said. Max ${w} words, plain text, no markdown. Never promise a job and never invent live openings or company names. Profile: ${p.edu}, ${p.exp}, English ${p.en}, city ${p.city}, target salary ${p.sal}.\nConversation so far:\n${h}\nUser: ${t}\nJobLife:`,{cache:false}).then(r=>(r.text||'').trim()).catch(()=>null)};
+const A2=(pr,fb,tl='')=>Promise.resolve(pr?pr.then(x=>x||fb):fb).then(x=>x+tl);
+async function ai(id,t,ch=[],d=1100){const c=C[id];c.t=1;c.ch=[];upd(id);const[x]=await Promise.all([t,new Promise(r=>setTimeout(r,d))]);c.t=0;c.m.push({r:'a',t:x});c.ch=ch;upd(id)}
+const CT={patna:'Patna',delhi:'Delhi NCR',ncr:'Delhi NCR',noida:'Noida',gurugram:'Gurugram',gurgaon:'Gurugram',mumbai:'Mumbai',pune:'Pune',bengaluru:'Bengaluru',bangalore:'Bengaluru',hyderabad:'Hyderabad',chennai:'Chennai',kolkata:'Kolkata',lucknow:'Lucknow',jaipur:'Jaipur',ranchi:'Ranchi',indore:'Indore'};
+const Q={city:["📍 Which city are you looking for work in?",['Patna','Delhi NCR','Mumbai','Bengaluru']],sal:["💰 What's your minimum expected monthly salary?",['₹15k+','₹18k+','₹25k+','Not sure']],pref:["Which matters more to you right now?",['Higher salary','Work from home','Career growth','Day shift','Any job quickly']]};
+function ext(t,p,g){const l=t.toLowerCase();
+for(const k in CT)if(l.includes(k)){p.city=CT[k];g.city=1;break}
+const m=l.match(/(\d{1,3})\s*(?:k\b|,?000|thousand|hazaar|हजार)/),m2=l.match(/₹\s?(\d{4,6})/),n=m?m[1]*1000:m2?+m2[1]:0;
+if(n>=5000){p.sal='₹'+n.toLocaleString('en-IN')+'+';g.sal=1}
+const D=/b\.?\s?com|b\.?\s?tech|bca|bba|b\.?sc|diploma|mba/;
+if(/12th|10th|graduat/.test(l)||D.test(l))p.edu=/12th/.test(l)?'12th Pass':/10th/.test(l)?'10th Pass':/graduat/.test(l)?'Graduate':l.match(D)[0].toUpperCase();
+if(/fresher/.test(l))p.exp='Fresher';
+const e=l.match(/(\d+)\s*(?:years?|yrs?|saal)\s*(?:of\s*)?(?:work\s*)?(?:experience|exp|anubhav)/);if(e)p.exp=e[1]+(e[1]==1?' year':' years');
+if(/english.*(weak|poor|kamzor|not good)/.test(l))p.en='Basic';else if(/english.*(good|fluent|achh|best)|(good|fluent).*english/.test(l))p.en='Good'}
+function user(id,t,free){const c=C[id];c.ch=[];if(t[0]!='→'){if(t=='Use sample message')t=SAMPLE;if(t=='Use sample answer')t=SA;c.m.push({r:'u',t});upd(id)}FL[id](t,free)}
+const pick=(id,t)=>{if(!C[id].t)user(id,t)};
+function sub(e,id){e.preventDefault();const i=e.target.q,t=i.value.trim();if(t&&!C[id].t){i.value='';user(id,t,1)}return false}
+const FL={
+async ob(t,free){if(t[0]=='→')return go('prof');
+const c=C.ob,p=P.rahul,g=c.g||(c.g={});ext(t,p,g);
+if(c.ask=='pref'&&!g.pref)g.pref=t;
+if(c.ask=='sal'&&!g.sal&&/not sure|pata nahi/i.test(t)){g.sal=1;p.sal='Flexible'}
+if(c.ask=='city'&&!g.city&&t.length<24){g.city=1;p.city=t}
+const need=!g.city?'city':!g.sal?'sal':!g.pref?'pref':'',first=!c.s;c.s=1;c.ask=need;if(!need)S.ob=1;
+const q=need?Q[need]:0,tl=q?'\n\n'+q[0]:`\n\nI've started your Career Profile. You can make it better any time.`;
+const fb=first?`Absolutely. Based on what you've told me (${p.edu}, ${p.exp}, English: ${p.en}), you already have a few realistic entry-level paths.\n\n`+p.paths.map((x,i)=>`${i+1}. ${x[0]}\n    ${x[1]}`).join('\n'):(PREF[t]||'Noted.');
+ai('ob',A2(free&&llm('ob',t,first?'Acknowledge what they shared, then suggest 3-5 realistic entry-level paths as a short numbered list with one reason each.':'React to what they just said in 1-2 sentences. Do not ask a question.',first?140:70),fb,tl),q?q[1]:['→ View my Career Profile'])},
+
+co(t,free){if(t[0]=='→')return go('prep');const p=cp();
+const R={'Find my best career paths':`Your strongest directions right now: ${p.paths.slice(0,3).map(x=>x[0]).join(', ')}. ${p.paths[0][0]} is the closest to your background. Start there and keep the others as backups.`,'Improve my resume':`Three quick wins: ${p.act.slice(0,3).join('; ')}. Small changes like these make a resume much easier to scan.`,'Why am I not getting interviews?':`Common reasons: the resume isn't tailored to each role, achievements have no numbers, or the job needs skills you haven't shown yet. Start by tailoring your resume and adding measurable results.`,'Prepare for interview':`Let's do it. I've picked 5 questions that ${p.jt} interviews often include.`,'What skills should I learn?':p.sk};
+const r=R[t]||(/apply|job|fit/i.test(t)?`For ${p.jt}, your match is ${p.mt}%. ${p.cs}`:/salary|pay|lpa|₹/i.test(t)?`Pay varies a lot by city, company and role, so treat ranges as rough. Your target is ${p.sal}. Compare a few roles before deciding.`:`Good question. From your profile (${p.edu}, ${p.exp}, ${p.city}), I would start with ${p.paths[0][0]}. Want me to compare you against a specific job?`);
+ai('co',A2(free&&!R[t]&&llm('co',t,`Answer their career question. Sample job on screen: ${p.jt} (${p.mt}% match).`,90),r),t=='Prepare for interview'?['→ Open Interview Prep']:QA)},
+mk(t,free){const c=C.mk,p=cp();if(t[0]=='→')return go(t.includes('Prep')?'prep':'coach');
+const fb=[`Good start. Try adding one specific strength and connect it to ${p.fld}.`,'Nice. Back it up with one real example and, if you can, a number.','Good thinking. Keep the structure simple: the situation, what you did, the result.','Pick two strengths and give a short real example for each.','Link the role to your goals so it sounds like a choice, not a fallback.'][c.i];const qq=p.q[c.i];c.i++;const nx=c.i>=5?`\n\nThat's the full round, ${p.n}. Practise your answers out loud a few times before the real interview.`:`\n\nNext question:\n${p.q[c.i]}`;
+ai('mk',A2(free&&llm('mk',t,`You are a mock interviewer for a ${p.jt} role. The question was: "${qq}". Give specific, kind feedback on their answer in 1-2 sentences.`,60),fb,nx),c.i>=5?['→ Back to Interview Prep','→ Ask JobLife']:['Use sample answer'])}};
+
+function useRes(){S.res=1;ld('resume','Reading your resume...')}
+function fl(i){const f=i.files[0];if(!f)return;if(/\.(pdf|docx)$/i.test(f.name))useRes();else{S.err=1;render()}}
+function fillJob(){const p=cp();$('#jd').value=p.jt.toUpperCase()+'  [SAMPLE JOB]\n\n'+p.jd}
+function an(){const v=$('#jd').value.trim();S.jd=v;if(!v){S.err=1;render();return}S.job=1;ld('match','JobLife is thinking...')}
+function sw(k){S.p=k;S.res=0;S.job=0;S.ob=1;S.jd='';C.co.m=[];render()}
+function rs(){S.p='rahul';S.ob=S.res=S.job=0;S.jd='';C.co.m=[];P.rahul.city='Patna';P.rahul.sal='₹18,000+';go('land')}
+
+const V={
+land:()=>`<div class=hero><div><h1>Your career is bigger than your resume.</h1><p class="mu lead">JobLife AI helps you understand where you fit, which jobs match you, what you're missing, and what to do next.</p><div class=row><button class=btn onclick="startOb()">Start with AI</button><button class="btn g" onclick="S.p='rahul';go('resume')">I have a Resume</button></div><p class=mu style="margin-top:12px">No resume? No problem.</p><button class="btn pill" onclick="startOb()">▶ Try Interactive Demo</button></div>
+<div class=cd><b>Good morning, Rahul 👋</b><p class=mu>Let's move your career forward.</p><div style="display:flex;gap:14px;align-items:center;margin:14px 0"><div class=ring style="--v:78;width:84px;height:84px;margin:0"><b style="font-size:22px">78%</b></div><div><b>Customer Support Executive</b><br><span class=tg>Sample Job</span></div></div><div class=bar><i data-w=70></i></div><small class=mu>Profile 70% complete</small></div></div>
+<p class="mu c" style="margin-top:28px">Built for India's next generation of job seekers.</p>
+<section id=how><h2>How it works</h2>${cards([['💬','Tell JobLife about you','Chat in your own words, or upload a resume. No giant forms.'],['🧭','Get your Career Profile','See paths that fit your education, skills and goals.'],['🎯','Match, improve, prepare','Compare jobs, fix gaps and practise interviews.']])}</section>
+<section id=feat><h2>Features</h2>${cards([['🧭','Career discovery','Find realistic paths when you are not sure what fits.'],['📄','Resume analysis','Clear strengths and fixes, with a JobLife Resume Score.'],['💼','Job match','Paste a job description and see how you fit.'],['✨','Coach and interview prep','Ask anything, then practise a mock interview.']])}</section>
+<section id=for><h2>For Job Seekers</h2><div class=cd>${['12th-pass students','College students','Freshers','0–5 years experience','Job switchers','Career changers','Not sure yet'].map(x=>`<span class=tg>${x}</span>`).join('')}<br><br><button class=btn onclick="go('start')">Start My Career Journey</button></div></section>
+<p class="mu c" style="margin-top:36px;font-size:13px">Prototype with sample data. No live job listings. Your career information is private.</p>`,
+start:()=>`<h2 class=c>How would you like to start?</h2><p class="mu c">Both paths build the same Career Profile.</p><div class=gr style="margin-top:20px"><div class=cd><div class=ic>📄</div><h3>I have a Resume</h3><p class=mu>Upload your resume and let JobLife understand your skills and experience.</p><br><button class=btn onclick="S.p='rahul';go('resume')">Upload Resume</button></div><div class=cd><div class=ic>💬</div><h3>I don't have a Resume</h3><p class=mu>Tell JobLife about yourself and start with a conversation.</p><br><button class=btn onclick="startOb()">Start Chat</button></div></div>`,
+chat:()=>`<h2>Let's understand what you're looking for.</h2><p class=mu>🔒 Your career information is private.</p>${chat('ob','Tell JobLife about yourself...')}`,
+load:()=>`<div class=c style="padding:90px 0"><div class=sp></div><p class=mu style="margin-top:16px">${S.msg}</p></div>`,
+prof:()=>{const p=P.rahul;return `<div class=cd style="max-width:520px;margin:0 auto"><small class=mu>Career Profile</small><h2>${p.n.toUpperCase()}</h2><div class=fg style="margin:14px 0">${F(p)}</div><h3>Potential career paths</h3><div style="margin-bottom:16px">${p.paths.map(x=>`<span class=tg>${x[0]}</span>`).join('')}</div><div class=sb><b>Profile completeness: ${comp()}%</b></div><div class=bar><i data-w=${comp()}></i></div><br><button class=btn style="width:100%" onclick="go('home')">Complete My Profile</button><p class="mu c" style="font-size:13px;margin-top:10px">Tell us a little more to improve recommendations.</p></div>`},
+home:()=>{const p=cp(),h=new Date().getHours(),g=h<12?'morning':h<17?'afternoon':'evening';
+const nx=!S.res?['Add your resume to get personalized job matching.','Upload Resume','resume']:!S.job?['Paste a job description to see how well you fit.','Analyse a Job','jobs']:[`Prepare for your ${p.jt} interview.`,'Prepare for Interview','prep'];
+const D=[['🧭','Career Discovery','Not sure what job fits you?','Explore Careers','career'],['📄','Resume',S.res?`Resume uploaded ✓ Score: ${p.sc}/100`:'Upload your resume to unlock personalized analysis.',S.res?'View Analysis':'Upload Resume',S.res?'rscore':'resume'],['💼','Job Match','Have a job description?','Analyse a Job','jobs'],['✨','AI Career Coach','Ask anything about your career.','Ask JobLife','coach']];
+return `<h2>Good ${g}, ${p.n} 👋</h2><p class=mu>Let's move your career forward.</p><div class=cd style="margin:16px 0"><div class=sb><b>Profile completeness</b><b>${comp()}%</b></div><div class=bar><i data-w=${comp()}></i></div></div><div class=gr>${D.map(x=>`<div class=cd><div class=ic>${x[0]}</div><h3>${x[1]}</h3><p class=mu style="margin-bottom:12px">${x[2]}</p><button class="btn s" onclick="go('${x[4]}')">${x[3]}</button></div>`).join('')}</div><div class="cd hl"><small>Your next best action</small><h3 style="font-size:18px;margin:4px 0 12px">${nx[0]}</h3><button class="btn g s" onclick="go('${nx[2]}')">${nx[1]}</button></div>`},
+career:()=>{const p=cp();return `<h2>Career Discovery</h2><p class=mu>Paths that fit ${p.n}'s profile. These are directions, not live openings.</p><div class=gr style="margin:16px 0">${p.paths.map((x,i)=>`<div class=cd><span class=tg>Path ${i+1}</span><h3 style="font-size:17px;margin-top:6px">${x[0]}</h3><p class=mu>${x[1]}</p></div>`).join('')}</div><button class=btn onclick="go('coach')">Narrow it down with AI</button>`},
+resume:()=>{const p=cp();return S.res?`<h2>Resume uploaded ✓</h2><div class=cd style="margin:16px 0">${p.rs.map(x=>`<p>${x}</p>`).join('')}<span class=tg>Sample resume</span></div><button class=btn onclick="ld('rscore','JobLife is thinking...')">Analyse My Resume</button>`:`<h2>Let JobLife understand your experience.</h2>${S.err?`<p class=er style="margin-top:8px">That file couldn't be read. Try PDF or DOCX.</p>`:''}<div class=dz style="margin:16px 0"><div class=ic>⬆️</div><b>Upload PDF or DOCX</b><p class=mu>Your resume is used to personalize your career recommendations.</p><br><input type=file id=f accept=".pdf,.docx" hidden onchange="fl(this)"><div class=row style="justify-content:center"><button class=btn onclick="$('#f').click()">Choose file</button><button class="btn g" onclick="useRes()">Use Sample Resume</button></div></div><p class=mu style="font-size:14px">⚠ Don't upload Aadhaar, PAN, bank details or other sensitive documents.<br>🔒 Your career information is private.</p>`},
+rscore:()=>{const p=cp();return `<h2>Your Resume Analysis</h2><div class="cd c" style="margin:16px 0"><div class=ring data-n=${p.sc} style="margin:0 auto 10px"><b>0</b></div><b>JOBLIFE RESUME SCORE · ${p.sc} / 100</b><p class=mu style="font-size:13px">A guide to help you improve. It is not an ATS result or a hiring prediction.</p></div><div class=gr><div class=cd><h3>STRENGTHS</h3>${li(p.str,'ok','✓')}</div><div class=cd><h3>NEEDS IMPROVEMENT</h3>${li(p.imp,'wn','⚠')}</div></div><div class=cd style="margin:14px 0"><h3>RECOMMENDED ACTIONS</h3>${li(p.act,'pc')}</div><div class=row><button class=btn onclick="go('jobs')">Analyse a Job</button><button class="btn g" onclick="go('coach')">Ask JobLife</button></div>`},
+jobs:()=>`<h2>Will I fit this job?</h2><p class=mu>Paste any job description and JobLife will compare it with your profile.</p>${S.res?'':`<p class=mu style="margin-top:8px;font-size:14px">Upload your resume to unlock personalized matching. <a href=# onclick="go('resume');return false" style="color:var(--p)">Upload</a></p>`}<textarea id=jd placeholder="Paste job description here...">${S.jd.replace(/</g,'&lt;')}</textarea>${S.err?'<p class=er>Paste a job description to see your match.</p>':''}<div class=row><button class=btn onclick="an()">Analyse Job</button><button class="btn g" onclick="fillJob()">Use Sample Job</button></div><p class=mu style="margin-top:10px;font-size:13px">Sample jobs are demo data, not live openings.</p>`,
+match:()=>{const p=cp();return `<h2>Job Match</h2><p class=mu>${p.jt} <span class=tg>Sample Job</span></p><div class="cd c" style="margin:16px 0"><div class=ring data-n=${p.mt} data-s=% style="margin:0 auto 10px"><b>0%</b></div><b>JOB MATCH</b></div><div class=gr><div class=cd><h3>STRONG MATCH</h3>${li(p.sg,'ok','✓')}</div><div class=cd><h3>PARTIAL MATCH</h3>${li(p.pt,'wn','◐')}<h3 style="margin-top:12px">MISSING / NEEDS WORK</h3>${li(p.ms,'er','!')}</div></div><div class=cd style="margin:14px 0"><h3>Should you apply?</h3><p><b>Yes — this role is worth considering based on your current profile.</b></p><p class=mu style="font-size:13px">This is guidance, not a guarantee of getting the job.</p><h3 style="margin-top:12px">Why?</h3><p>${p.why}</p><h3 style="margin-top:12px">Before applying</h3>${li(p.bf,'pc')}</div><div class=row><button class=btn onclick="go('prep')">Prepare for Interview</button><button class="btn g" onclick="go('coach')">Ask JobLife</button></div>`},
+coach:()=>`<h2>JobLife Career Coach</h2><p class=mu>Personalized to your career profile</p>${chat('co','Ask JobLife anything...',1)}`,
+prep:()=>{const p=cp();return `<h2>Your Interview Prep</h2><p class=mu>${p.jt}</p><p style="margin:8px 0 16px">JobLife has identified 5 areas you should prepare for.</p><div class=gr>${p.q.map((x,i)=>`<div class=cd><span class=tg>${i+1}</span><b>${x}</b></div>`).join('')}</div><br><button class=btn onclick="startMk()">Start Mock Interview</button>`},
+mock:()=>`<h2>Mock Interview</h2><p class=mu>Simulated interviewer with demo responses</p>${chat('mk','Type your answer...',1)}`,
+me:()=>{const p=cp();return `<h2>${p.n}'s Profile</h2><div class=cd style="margin:16px 0"><div class=fg>${F(p)}</div></div><h3>Switch sample profile</h3><div class=row style="margin-bottom:18px">${Object.keys(P).map(k=>`<button class="btn s ${k==S.p?'':'g'}" onclick="sw('${k}')">${P[k].n}</button>`).join('')}</div><button class="btn g s" onclick="rs()">Restart demo</button><p class=mu style="margin-top:16px;font-size:14px">🔒 Your career information is private. This prototype runs on sample data and stores nothing.</p>`}};
+
+function render(){const v=S.v,L=v=='land',nav=!NO.includes(v),cur=AM[v]||v;
+A.innerHTML=`<header><div class="w hd"><div class=lg onclick="go('land')"><span class=lm>JL</span>JOBLIFE <small>AI</small></div><nav class="nv dn">${L?`<a href=#how>How it works</a><a href=#feat>Features</a><a href=#for>For Job Seekers</a><button onclick="go('start')">Sign In</button>`:NAV.map(n=>`<button class="${n[0]==cur?'on':''}" onclick="go('${n[0]}')">${n[1]}</button>`).join('')}</nav>${L?`<button class="btn s dn" onclick="go('start')">Start My Career Journey</button><button class="btn s g" onclick="startOb()">Try Demo</button>`:`<span class=tg onclick="go('me')">DEMO · ${cp().n}</span>`}</div></header><main class="w v">${V[v]()}</main>${nav?`<nav class=bn>${NAV.filter(n=>n[3]).map(n=>`<button class="${n[0]==cur?'on':''}" onclick="go('${n[0]}')"><span>${n[2]}</span>${n[3]}</button>`).join('')}</nav>`:''}`;
+document.querySelectorAll('[data-n]').forEach(e=>{const n=+e.dataset.n,t0=performance.now(),b=e.querySelector('b');(function f(t){const k=Math.min(1,(t-t0)/900),x=Math.round(n*k);e.style.setProperty('--v',x);b.textContent=x+(e.dataset.s||'');if(k<1)requestAnimationFrame(f)})(t0)});
+setTimeout(()=>document.querySelectorAll('.bar i').forEach(i=>i.style.width=i.dataset.w+'%'),60);
+const id=cid();if(id)upd(id)}
+render();
+</script></body></html>
