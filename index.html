@@ -40,7 +40,16 @@ textarea{width:100%;min-height:200px;margin:14px 0;padding:14px;border-radius:16
 .bn{display:none;position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--bd);padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:9}.bn button{flex:1;font-size:11px;display:grid;justify-items:center;color:var(--mu);padding:5px 0;border-radius:12px}.bn .on{color:var(--p);font-weight:700}.bn span{font-size:20px}
 @media(max-width:800px){.bn{display:flex}.dn{display:none!important}.inp.nb{bottom:calc(64px + env(safe-area-inset-bottom,0px))}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-</style></head><body><div id="app"></div><script>
+</style><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://fkieomlepxhfblsjdza.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_adexo1jQBBCxACFyq6_8Kg_e457Uvv4";
+
+const supabaseClient = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+</script></head><body><div id="app"></div><script>
 const $=s=>document.querySelector(s),A=$('#app');
 const S={v:'land',p:'rahul',ob:0,res:0,job:0,jd:'',err:0,msg:''};
 const P={
