@@ -102,7 +102,25 @@ const li=(a,c,s)=>a.map((x,i)=>`<div class=li><b class="${c}">${s||i+1+'.'}</b><
 const F=p=>[['Education',p.edu],['Experience',p.exp],['English',p.en],['Location',p.city],['Target salary',p.sal]].map(x=>`<div><small class=mu>${x[0]}</small><br><b>${x[1]}</b></div>`).join('');
 const chat=(id,ph,nb)=>`<div id=m></div><div id=c></div><form class="inp${nb?' nb':''}" onsubmit="return sub(event,'${id}')"><input name=q placeholder="${ph}" autocomplete=off><button class=btn>Send</button></form>`;
 const cards=a=>`<div class=gr>${a.map(x=>`<div class=cd><div class=ic>${x[0]}</div><h3>${x[1]}</h3><p class=mu>${x[2]}</p></div>`).join('')}</div>`;
+async function signIn(){
+  const email=prompt("Enter your email");
+  const password=prompt("Enter your password");
 
+  if(!email||!password)return;
+
+  const {error}=await supabaseClient.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if(error){
+    alert(error.message);
+    return;
+  }
+
+  alert("Login successful ✅");
+  go('start');
+  }
 function go(v){S.v=v;S.err=0;if(v=='coach'&&!C.co.m.length)initCo();render();scrollTo(0,0)}
 function ld(v,m){S.v='load';S.msg=m;render();setTimeout(()=>go(v),1100)}
 function initCo(){const p=cp();C.co.m=[{r:'u',t:'Should I apply for this job?'},{r:'a',t:`Based on your profile and the ${p.jt} description, it looks relevant. ${p.cs}`}];C.co.ch=QA}
