@@ -153,7 +153,24 @@ function an(){const v=$('#jd').value.trim();S.jd=v;if(!v){S.err=1;render();retur
 function sw(k){S.p=k;S.res=0;S.job=0;S.ob=1;S.jd='';C.co.m=[];render()}
 function rs(){S.p='rahul';S.ob=S.res=S.job=0;S.jd='';C.co.m=[];P.rahul.city='Patna';P.rahul.sal='₹18,000+';go('land')}
 
-const V={
+async function saveProfileToSupabase(){
+  const { data:{ user }, error } = await supabaseClient.auth.getUser();
+
+  if(error || !user){
+    console.log("No signed-in user");
+    return;
+  }
+
+  const { error: saveError } = await supabaseClient
+    .from("profiles")
+    .insert({ user_id: user.id });
+
+  if(saveError){
+    console.error("Profile save failed:", saveError);
+  }else{
+    console.log("Profile saved to Supabase ✅");
+  }
+  }const V={
 land:()=>`<div class=hero><div><h1>Your career is bigger than your resume.</h1><p class="mu lead">JobLife AI helps you understand where you fit, which jobs match you, what you're missing, and what to do next.</p><div class=row><button class=btn onclick="startOb()">Start with AI</button><button class="btn g" onclick="S.p='rahul';go('resume')">I have a Resume</button></div><p class=mu style="margin-top:12px">No resume? No problem.</p><button class="btn pill" onclick="startOb()">▶ Try Interactive Demo</button></div>
 <div class=cd><b>Good morning, Rahul 👋</b><p class=mu>Let's move your career forward.</p><div style="display:flex;gap:14px;align-items:center;margin:14px 0"><div class=ring style="--v:78;width:84px;height:84px;margin:0"><b style="font-size:22px">78%</b></div><div><b>Customer Support Executive</b><br><span class=tg>Sample Job</span></div></div><div class=bar><i data-w=70></i></div><small class=mu>Profile 70% complete</small></div></div>
 <p class="mu c" style="margin-top:28px">Built for India's next generation of job seekers.</p>
